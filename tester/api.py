@@ -10,6 +10,7 @@ class UserResource(ModelResource):
 		resource_name = 'user'
 		excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser']
         allowed_methods = ['get']
+        always_return_data = True #needed for angular
 
 class EntryResource(ModelResource):
     user = fields.ForeignKey(UserResource, 'user')
@@ -17,3 +18,4 @@ class EntryResource(ModelResource):
     class Meta:
         queryset = Entry.objects.all()
         resource_name = 'entry'
+        always_return_data = True #needed for angular
