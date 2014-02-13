@@ -1,6 +1,6 @@
 'use strict';
 
-var tastyApp = angular.module('tastyApp',['restangular']);
+var app = angular.module('tastyApp', ['restangular']);
 
 
 // configure restangular to work with tastypie, which returns data in an objects list, meta data in a meta object
@@ -22,17 +22,18 @@ app.config(function(RestangularProvider) {
 
 
 //functions
-function tastyController($scope, Restangular){
-	$scope.stuff = [];
+function TastyController($scope, Restangular){
+	$scope.entry = [];
 
 	$scope.getAllPies = function(){
-		Restangular.all("stuff").getList().then(function(stuff){
-			$scope.stuff = stuff;
+		Restangular.all("entry").getList().then(function(entry){
+			$scope.entry = entry;
 		});
 	}
 
 	$scope.getTotalPies = function(){
-        return $scope.stuff.length;
+        return $scope.entry.length;
+        //return "hi";
     }
 
 	$scope.getAllPies();

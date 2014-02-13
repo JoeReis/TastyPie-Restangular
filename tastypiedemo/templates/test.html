@@ -8,14 +8,21 @@
 	<script type="text/javascript" src="{% static "js/angular.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/tester.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/restangular.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/angular.js" %}"></script>
     <script type="text/javascript" src="{% static "js/angular-resource.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/underscore-min.js" %}"></script>
 </head>
 <body>
 	hello world
 	{% verbatim %}
 		<div ng-controller="TastyController">
 			<h2>Tasty stuff: {{ getTotalPies() }} </h2>
+
+			<ul>
+				<li ng-repeat="e in entry">
+					<span class="stuff-{{ entry.title }}">{{ entry.body }}</span>
+				</li>
+			</ul>
+
 		</div>
 	{% endverbatim %}
 </body>
