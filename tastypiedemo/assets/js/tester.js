@@ -22,3 +22,18 @@ app.config(function(RestangularProvider) {
 
 
 //functions
+function tastyController($scope, Restangular){
+	$scope.stuff = [];
+
+	$scope.getAllPies = function(){
+		Restangular.all("stuff").getList().then(function(stuff){
+			$scope.stuff = stuff;
+		});
+	}
+
+	$scope.getTotalPies = function(){
+        return $scope.stuff.length;
+    }
+
+	$scope.getAllPies();
+}

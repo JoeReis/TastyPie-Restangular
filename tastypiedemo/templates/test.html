@@ -1,15 +1,22 @@
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
-<html ng-app="testApp">
+<html ng-app="tastyApp">
 
 <head>
 	<title>Sample app</title>
-	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+	<script type="text/javascript" src="{% static "js/angular.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/tester.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/restangular.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/angular.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/angular-resource.js" %}"></script>
 </head>
 <body>
 	hello world
-
+	{% verbatim %}
+		<div ng-controller="TastyController">
+			<h2>Tasty stuff: {{ getTotalPies() }} </h2>
+		</div>
+	{% endverbatim %}
 </body>
 </html>
