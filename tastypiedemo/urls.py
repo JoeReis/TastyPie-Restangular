@@ -1,6 +1,8 @@
 from django.conf.urls import *
 from tastypie.api import Api
-from tester.api import EntryResource, UserResource
+#from tester.api.resources import EntryResource, UserResource
+from tester.api.resources import EntryResource, UserResource
+
 from django.views.generic import TemplateView
 from django.conf import settings
 
